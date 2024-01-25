@@ -9,3 +9,9 @@ export const getVariantUrl = () => {
 export const getCategoryUrl = () => {
   return `${apiUrl}/getCategoryData`;
 };
+export const singleVarientUrl = (id) => {
+  return apiUrl + "/getSingleVarient/" + id;
+};
+export const updateVarientUrl = () => {
+  return `${apiUrl}/updateVarient`;
+};

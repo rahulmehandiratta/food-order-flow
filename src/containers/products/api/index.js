@@ -31,12 +31,12 @@ export const getCategoryUrl = () => {
     return `${apiUrl}/routes/category/getCategoryData`;
 }
 
-export const singleProductUrl = (productId) => {
-    return apiUrl + "/routes/product/getSingleProduct/" + productId;
-};
-export const updateProductUrl = () => {
-    return `${apiUrl}/routes/product/updateProduct`;
-  };
+// export const singleProductUrl = (productId) => {
+//     return apiUrl + "/routes/product/getSingleProduct/" + productId;
+// };
+// export const updateProductUrl = () => {
+//     return `${apiUrl}/routes/product/updateProduct`;
+//   };
   export const updateServiceUrl = () => {
     return `${apiUrl}/routes/product/updateService`;
   };
@@ -45,4 +45,10 @@ export const updateProductUrl = () => {
 }
 export const deleteProductUrl = (id) => {
     return apiUrl + "/routes/product/deleteProduct/" + id;
+  };
+  export const updateProductUrl = () => {
+    return `${apiUrl}/updateProduct`;
+};
+export const singleProductUrl = (id) => {
+    return apiUrl + "/getSingleProduct/" + id;
   };

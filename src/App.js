@@ -20,7 +20,7 @@ class App extends React.Component {
             <div className="App">
                 {isLoading ? <div className={'loader_outer_view'}>
                     <div className={'loader_inner'}>
-                        <img src={'../assets/logos/thrones_logo.png'}/>
+                        <img src={'../assets/logos/thrones_logo_sm.png'}/>
                     </div>
                 </div> : null}
 

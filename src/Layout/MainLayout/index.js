@@ -24,6 +24,9 @@ const InnerLayout = (props) => {
                 <Suspense fallback={<></>}>
                     <FooterComponent/>
                 </Suspense>
+
+                <audio id="mySound" src="../assets/sound/confirmation-tone-2867.wav"></audio>
+
             </div>
         </>) : (
             <Navigate replace to="/login"/>

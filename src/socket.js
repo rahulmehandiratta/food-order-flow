@@ -81,6 +81,13 @@ const SocketComponentMain = (props) => {
                 kotData: data
             })
         })
+        Socket.on('print order', (data) => {
+            dispatch({
+                type: 'PRINT_ORDER',
+                isPrintOrder: true,
+                orderId: data.orderId
+            })
+        })
 
 
     }, [])

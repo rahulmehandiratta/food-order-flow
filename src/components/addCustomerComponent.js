@@ -46,10 +46,11 @@ const AddCustomerComponent = (props) => {
 
       
         let x = await dispatch(addCustomerFxn(valData));
-        onSubmit();
+      
         if (x && x.success) {
           if (onClose) {
             onClose()
+            onSubmit();
             // window.location.reload()
           }
           props.form.setFieldsValue({

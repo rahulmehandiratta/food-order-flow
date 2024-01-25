@@ -14,6 +14,11 @@ import EditCustomer from "../containers/customer/editCustomer";
 import KotView from "../containers/kotView";
 import KotData from "../containers/kot/kotList";
 import OrderList from "../containers/order/orderList";
+import PrintTesting from "../containers/printTesting";
+import EditVariant from "../containers/variants/editVariant";
+import EditCategory from "../containers/categories/editCategory";
+import EditProduct from "../containers/products/editProduct";
+
 let menuData = [
     {
         name: "Dashboard",
@@ -24,6 +29,23 @@ let menuData = [
         authority: ["admin"],
     },
     {
+        name: "editCategory",
+        path: "/editCategory",
+        key: "editCategory",
+        icon: "monitor",
+        component: EditCategory,
+        dontShowOnMenu: true,
+    },
+    {
+        name: "editProduct",
+        path: "/editProduct",
+        key: "editProduct",
+        icon: "monitor",
+        component: EditProduct,
+        dontShowOnMenu: true,
+
+    },
+    {
         name: "Kot Print",
         path: "/kot-print",
         key: "kotPrint",
@@ -32,7 +54,7 @@ let menuData = [
         dontShowOnMenu: true,
     },
     {
-        name: "KotView",
+        name: "Kot View",
         path: "/KotView",
         key: "KotView",
         icon: "monitor",
@@ -107,7 +129,7 @@ let menuData = [
         path: "/print",
         key: "post",
         icon: "monitor",
-        component: PrintDesign,
+        component: PrintTesting,
         dontShowOnMenu: true,
 
     },
@@ -153,6 +175,14 @@ let settingData = [
         key: "addVariant",
         icon: "monitor",
         component: AddVariant,
+    },
+    {
+        name: "Edit Variant",
+        path: "/editVariant",
+        key: "editVariant",
+        icon: "monitor",
+        component: EditVariant,
+        dontShowOnMenu: true,
     }
 ];
 export {menuData, settingData}

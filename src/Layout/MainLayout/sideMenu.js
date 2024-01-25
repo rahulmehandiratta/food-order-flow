@@ -2,6 +2,7 @@ import React from "react";
 import {Link, useNavigate} from "react-router-dom";
 import {menuData, settingData} from "../../routes/menu";
 import {useDispatch} from "react-redux";
+import {Helmet} from "react-helmet";
 
 const SingleMenu = (props) => {
     let {menu, events} = props;
@@ -32,11 +33,9 @@ const NestedMenu = (props) => {
                     {menu.subMenu.map((child) => {
                         return !child.dontShowOnMenu ? (
                             events.checkAuth(child) ? (
-                                <>
-                                    <li key={child.key} onClick={() => events.openLink(child.path)}>
-                                        <a>{child.name}</a>
-                                    </li>
-                                </>
+                                <li key={child.key} onClick={() => events.openLink(child.path)}>
+                                    <a>{child.name}</a>
+                                </li>
                             ) : null
                         ) : null;
                     })}
@@ -85,7 +84,6 @@ const SideMenu = () => {
                     <div id="sidebar-menu" class="sidebar-menu">
                         <ul>
 
-
                             <li class="submenu-open">
                                 <h6 class="submenu-hdr">Main</h6>
                                 <ul>
@@ -120,7 +118,9 @@ const SideMenu = () => {
                         </ul>
                     </div>
                 </div>
+
             </div>
+
         </>
     );
 };

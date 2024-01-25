@@ -292,10 +292,10 @@ table .rc-table-cell {
     background: #fff;
     white-space: nowrap;
     text-transform: capitalize;
-    padding: 5px 15px;
+    padding: 3px 15px;
     border-radius: 50px;
     font-weight: 400;
-    font-size: 14px;
+    font-size: 13px;
     border: 2px solid;
 }
 

@@ -5,6 +5,10 @@
     position: relative;
 }
 
+.confirmModal > div {
+    font-size: 15px;
+}
+
 .btn-box {
     text-align: right;
     margin-top: 10px;

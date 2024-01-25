@@ -13,7 +13,6 @@ function KotData() {
       try {
         const data = await fetchAllKot({ ...params });
         resolve(data);
-        console.log(data);
       } catch (error) {
         console.error("Error fetching data:", error);
       }

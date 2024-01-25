@@ -1,5 +1,5 @@
 import React from "react"
-
+import {Helmet} from "react-helmet";
 const Footer = (props) => {
     return (
         <>
@@ -12,6 +12,9 @@ const Footer = (props) => {
                     </div>
                 </div>
             </div>
+            <Helmet>
+                <script src="../assets/js/script.js" type="text/javascript"/>
+            </Helmet>
         </>
     )
 }

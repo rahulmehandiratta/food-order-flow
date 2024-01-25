@@ -28,14 +28,13 @@ const Popconfirm = (props) => {
                         {title}
                     </div>
                     <div className={'btn-box'}>
-                        <button type="button" className="btn app-light-btn app-xs"
+                        <button type="button" className="btn btn-outline-info btn-sm"
                                 onClick={() => {
                                     setVisible(false);
-                                    // popRef.current.close()
                                 }}
                         ><span>No</span></button>
                         {' '}
-                        <button type="button" className="btn app-btn app-xs" onClick={() => {
+                        <button type="button" className="btn btn-primary btn-sm" onClick={() => {
                             onSubmit()
                         }}><span>{okText ? okText : 'Yes'}</span>
                         </button>

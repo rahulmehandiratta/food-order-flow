@@ -9,7 +9,7 @@ class InputBoxComponent extends Component {
     render() {
         let {title = '', className = '', extra, labelCls = '', customStyle = {}} = this.props
         return (
-            <div className={'inputBox'} style={customStyle}>
+            <div className={'inputBox mb-2'} style={customStyle}>
                 <div className={'labelRow'}>
                     {title ? <React.Fragment>
                         <label className={`labelNew ${labelCls}`}>{title} : </label>

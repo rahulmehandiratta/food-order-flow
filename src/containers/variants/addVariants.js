@@ -8,17 +8,20 @@ import {
 import {addVariantUrl} from "./api";
 import {FetchVariants} from "./actions";
 import {FetchCatgory} from "./actions";
+import Image from "../../edit (1).png"
 import PageHeader from "../../components/Elements/pageHeader";
 import axios from "axios";
 import {categoryType} from "../../components/_utils/appUtils";
 import {GetEachFormFields} from "../../components/_utils/formUtils";
 import {fetchCategory} from "../categories/actions";
+import {useNavigate} from "react-router-dom";
 
 function AddVariant(props) {
     let tableRef = useRef();
     const [formData, setFormData] = useState({
         name: "",
     });
+    const navigate = useNavigate();
     const [allCategory, setAllCategory] = useState([])
     const handleChange = (e, fieldName) => {
         const {value} = e.target;
@@ -64,7 +67,7 @@ function AddVariant(props) {
     }, []);
 
     const handleState = async () => {
-        let x = await FetchCatgory();
+        let x = await FetchCatgory({results: 1000});
         setAllCategory(x.data)
     };
     const apiRequest = (params) => {
@@ -72,7 +75,6 @@ function AddVariant(props) {
             try {
                 const data = await FetchVariants({...params});
                 resolve(data);
-                console.log(data, "dara");
             } catch (error) {
                 console.error("Error fetching data:", error);
             }
@@ -101,6 +103,23 @@ function AddVariant(props) {
                 }
 
             </div>
+        },
+        {
+            title: "Action",
+            dataIndex: "action",
+            key: "action",
+            render: (v, item) => {
+                return (
+                    <>
+                        <a className={'empty_btn'} onClick={() => {
+                            navigate(`/editVariant?_id=${item._id}`)
+                        }}>
+                            <i className={'fa fa-edit far'}></i>
+                        </a>
+
+                    </>
+                );
+            },
         },
     ];
 

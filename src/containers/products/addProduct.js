@@ -14,7 +14,7 @@ import {GetEachFormFields} from "../../components/_utils/formUtils";
 // import { FetchBrand, addProductFxn, getCategory } from "./actions";
 
 import {fetchCategory} from "../categories/actions";
-import {FetchVariants } from "../variants/actions";
+import {FetchCatgory, FetchVariants} from "../variants/actions";
 import {addProductFxn} from "./actions";
 
 // import { getItemLocalstorage } from "../../components/_utils/_utils";
@@ -63,24 +63,17 @@ function AddProduct(props) {
 
     setShowDeleteButtons([...showDeleteButtons, true]);
   }; //   const userType = getItemLocalstorage("user")["userType"];
-  const { getFieldValue } = props.form;
-  let { onClose = null } = props;
+  const {getFieldValue} = props.form;
+  let {onClose = null} = props;
 
   let dispatch = useDispatch();
   const navigate = useNavigate();
   const [category, setCategory] = useState([]);
   const [variant, setVariant] = useState([]);
 
-  const api = (params) => {
-    return new Promise(async (resolve) => {
-      try {
-        const data = await fetchCategory({ ...params });
-        resolve(data);
-        setCategory(data.data);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    });
+  const api = async () => {
+    let x = await FetchCatgory({results: 500});
+    setCategory(x.data)
   };
 
   const getVariant = (params) => {
@@ -139,10 +132,10 @@ function AddProduct(props) {
           });
           return;
         }*/
-        if (formData.length != 1) {
-          valData.variants = formData;
-        }
-
+        // if (formData.length != 1) {
+        //   valData.variants = formData;
+        // }
+        valData.variants = formData;
         let fd = new FormData();
         fd.append("obj", JSON.stringify(valData));
         if (productFile && productFile.name) {
@@ -161,6 +154,7 @@ function AddProduct(props) {
             code: "",
             price: "",
           });
+          setFormData([])
 
           setTimeout(() => {
             navigate("/productList");

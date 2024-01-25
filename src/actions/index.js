@@ -5,7 +5,9 @@ const initialState = {
     activePackages: [],
     loadExamData: false,
     kotData: {},
-    isRefreshKot: false
+    isRefreshKot: false,
+    isPrintOrder: false,
+    orderId: "",
 }
 
 export default (state = initialState, action) => {
@@ -57,6 +59,13 @@ export default (state = initialState, action) => {
                 ...state,
                 isRefreshKot: action.isRefreshKot,
                 kotData: action.kotData
+            }
+        }
+        case 'PRINT_ORDER': {
+            return {
+                ...state,
+                isPrintOrder: action.isPrintOrder,
+                orderId: action.orderId
             }
         }
         default:

@@ -6,3 +6,9 @@ export const getCategoryDataUrl = () => {
 export const addCategoryUrl = () => {
     return `/addCategory`;
 };
+export const updateCategoryUrl = () => {
+    return `/updateCategory`;
+};
+export const singleCategoryUrl = (id) => {
+    return apiUrl + "/getSingleCategory/" + id;
+  };

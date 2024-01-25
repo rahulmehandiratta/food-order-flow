@@ -2,183 +2,210 @@ import React, {useRef, useState} from "react";
 // import { customAxios as axios, getToken } from "../../request";
 import {useNavigate} from "react-router-dom";
 import {
-  Form,
-  InputBox,
-  Table,
-  notification,
+    Form,
+    InputBox,
+    Table,
+    notification, Card,
 } from "../../components/Elements/appUtils";
-import { category, categoryType } from "../../components/_utils/appUtils";
+import {category, categoryType} from "../../components/_utils/appUtils";
 import PageHeader from "../../components/Elements/pageHeader";
 import {GetEachFormFields} from "../../components/_utils/formUtils";
 import {appAxios as axios} from "../../request";
 import {fetchCategory} from "./actions";
 import {addCategoryUrl} from "./api";
+import Image from "../../edit (1).png"
 
 function AddCategory(props) {
-  let tableRef = useRef();
-  const {getFieldValue} = props.form;
+    let tableRef = useRef();
+    const {getFieldValue} = props.form;
 
-  const [formData, setFormData] = useState({
-    name: "",
-  });
-  const [categoryFile, setCategoryFile] = useState("");
-
-  const handleFileChange = (e) => {
-    const file = e.files[0];
-    setCategoryFile(file);
-  };
-  const navigate = useNavigate();
-  const handleChange = (e, fieldName) => {
-    const {value} = e.target;
-    setFormData({
-      ...formData,
-      [fieldName]: value,
+    const [formData, setFormData] = useState({
+        name: "",
     });
-  };
+    const [categoryFile, setCategoryFile] = useState("");
 
-  const handleSubmit = async (e) => {
-    const {form} = props;
+    const handleFileChange = (e) => {
+        const file = e.files[0];
+        setCategoryFile(file);
+    };
+    const navigate = useNavigate();
+    const handleChange = (e, fieldName) => {
+        const {value} = e.target;
+        setFormData({
+            ...formData,
+            [fieldName]: value,
+        });
+    };
 
-    e.preventDefault();
-    console.log(formData, "formdata");
-    form.validateFields(async (err, valData) => {
-      if (!err) {
-        if (!valData.menu) {
-          notification.warning({message: "Please select menu"});
-          return;
-        }
-        if (!valData.name) {
-          notification.warning({message: "Enter Name"});
-          return;
-        }
+    const handleSubmit = async (e) => {
+        const {form} = props;
 
-      /*  if (!(categoryFile && categoryFile.name)) {
-          notification.warning({
-            message: "Choose select Category-file",
-          });
-          return;
-        }*/
-        let fd = new FormData();
-        fd.append("obj", JSON.stringify(valData));
-        if (categoryFile && categoryFile.name) {
-          fd.append("categoryFile", categoryFile);
-        }
-        console.log(valData, "this is valdata");
+        e.preventDefault();
+        console.log(formData, "formdata");
+        form.validateFields(async (err, valData) => {
+            if (!err) {
+                if (!valData.menu) {
+                    notification.warning({message: "Please select menu"});
+                    return;
+                }
+                if (!valData.name) {
+                    notification.warning({message: "Enter Name"});
+                    return;
+                }
 
-        const response = await axios.post(addCategoryUrl(), fd);
-        if (response.data.success) {
-          notification.success({
-            message: response.data.message || "Success",
-          });
-          setFormData({name: ""});
-          tableRef.current.reload();
-        } else {
-          notification.error({message: response.data.message});
-        }
-      }
-    });
+                /*  if (!(categoryFile && categoryFile.name)) {
+                    notification.warning({
+                      message: "Choose select Category-file",
+                    });
+                    return;
+                  }*/
+                let fd = new FormData();
+                fd.append("obj", JSON.stringify(valData));
+                if (categoryFile && categoryFile.name) {
+                    fd.append("categoryFile", categoryFile);
+                }
 
-    // Send the data to the backend using Axios
-  };
-  // const handleSubmit = async (e) => {
-  //     const { form } = props;
+                const response = await axios.post(addCategoryUrl(), fd);
+                if (response.data.success) {
+                    notification.success({
+                        message: response.data.message || "Success",
+                    });
+                    form.setFieldsValue({name: "", menu: undefined});
 
-  //     e.preventDefault();
-  //     console.log(formData, "formdata");
+                    setCategoryFile("");
 
-  //     if (!formData.name) {
-  //         notification.warning({message: "Enter Category Name"});
-  //         return;
-  //     }
-  //     if (!(categoryFile && categoryFile.name)) {
-  //         notification.warning({
-  //           message: "Choose select Product-file",
-  //         });
-  //         return;
-  //       }
-  //     // Send the data to the backend using Axios
-  //     const response = await axios.post(addCategoryUrl(), formData);
-  //     if (response.data.success) {
-  //         notification.success({
-  //             message: response.data.message || "Success",
-  //         });
-  //         setFormData({name: ""});
-  //         tableRef.current.reload();
-  //     } else {
-  //         notification.error({message: response.data.message});
-  //     }
-  // };
+                    tableRef.current.reload();
+                } else {
+                    notification.error({message: response.data.message});
+                }
+            }
+        });
 
-  const apiRequest = (params) => {
-    return new Promise(async (resolve) => {
-      try {
-        const data = await fetchCategory({...params});
-        resolve(data);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    });
-  };
+        // Send the data to the backend using Axios
+    };
+    // const handleSubmit = async (e) => {
+    //     const { form } = props;
 
-  const columns = [
-    {
-      title: "Category Name",
-      dataIndex: "name",
-      key: "name",
-    },
-  ];
-  let inputTypes = {
-    fields: [
-      {
-        key: "menu",
-        label: "Food Menu",
-        span: "col-md-4",
-        type: "select",
-        options: category,
-        keyAccessor: (x) => x.key,
-        valueAccessor: (x) => `${x.name}`,
-        onChange: (x) => {
-          props.form.setFieldsValue({
-            menu: x,
-          });
+    //     e.preventDefault();
+    //     console.log(formData, "formdata");
+
+    //     if (!formData.name) {
+    //         notification.warning({message: "Enter Category Name"});
+    //         return;
+    //     }
+    //     if (!(categoryFile && categoryFile.name)) {
+    //         notification.warning({
+    //           message: "Choose select Product-file",
+    //         });
+    //         return;
+    //       }
+    //     // Send the data to the backend using Axios
+    //     const response = await axios.post(addCategoryUrl(), formData);
+    //     if (response.data.success) {
+    //         notification.success({
+    //             message: response.data.message || "Success",
+    //         });
+    //         setFormData({name: ""});
+    //         tableRef.current.reload();
+    //     } else {
+    //         notification.error({message: response.data.message});
+    //     }
+    // };
+
+    const apiRequest = (params) => {
+        return new Promise(async (resolve) => {
+            try {
+                const data = await fetchCategory({...params});
+                resolve(data);
+            } catch (error) {
+                console.error("Error fetching data:", error);
+            }
+        });
+    };
+
+    const columns = [
+        {
+            title: "Food Menu",
+            dataIndex: "menu",
+            key: "menu",
         },
-      },
-      {
-        key: "name",
-        label: "Name *",
-        span: "col-md-4",
-        // placeholder: "Name",
-      },
-      {
-        key: "categoryFile",
-        label: "Category File",
-        required: false,
-        type: "file",
-        fileName: categoryFile,
-        onChange: ({target}) => {
-          handleFileChange(target);
+        {
+            title: "Category Name",
+            dataIndex: "name",
+            key: "name",
         },
-        span: "col-md-4",
-      },
-    ],
-  };
-  return (
-      <PageHeader title={"Categories"}>
-        <Form onSubmit={handleSubmit}>
-          <div className="form-elements-wrapper">
-            <div className="card-body">
-              <div className={"row"}>
-                {inputTypes.fields.map((item, key) => {
-                  return !item.hidden ? (
-                      <div className={`${item.span ? item.span : "col-md-6"}`}
-                           key={key}>
-                        <GetEachFormFields {...props.form} item={item}/>
-                      </div>
-                  ) : null;
-                })}
-              </div>
-            </div>
-            {/* <Card title={"Varients"} size={"small"}>
+        {
+            title: "Action",
+            dataIndex: "action",
+            key: "action",
+            render: (v, item) => {
+                return (
+                    <>
+
+                        <a onClick={() => {
+                            navigate(`/editCategory?_id=${item._id}`)
+                        }}>
+
+                            <img src={Image} style={{height: '20px', width: '20px'}}/>
+                        </a>
+
+                    </>
+                );
+            },
+        },
+    ];
+    let inputTypes = {
+        fields: [
+            {
+                key: "menu",
+                label: "Food Menu",
+                span: "col-md-4",
+                type: "select",
+                options: category,
+                keyAccessor: (x) => x.key,
+                valueAccessor: (x) => `${x.name}`,
+                onChange: (x) => {
+                    props.form.setFieldsValue({
+                        menu: x,
+                    });
+                },
+            },
+            {
+                key: "name",
+                label: "Name *",
+                span: "col-md-4",
+                // placeholder: "Name",
+            },
+            {
+                key: "categoryFile",
+                label: "Category File",
+                required: false,
+                type: "file",
+                fileName: categoryFile,
+                onChange: ({target}) => {
+                    handleFileChange(target);
+                },
+                span: "col-md-4",
+            },
+        ],
+    };
+    return (
+        <PageHeader title={"Categories"}>
+            <Form onSubmit={handleSubmit}>
+                <div className="form-elements-wrapper">
+                    <div className="card-body">
+                        <div className={"row"}>
+                            {inputTypes.fields.map((item, key) => {
+                                return !item.hidden ? (
+                                    <div className={`${item.span ? item.span : "col-md-6"}`}
+                                         key={key}>
+                                        <GetEachFormFields {...props.form} item={item}/>
+                                    </div>
+                                ) : null;
+                            })}
+                        </div>
+                    </div>
+                    {/* <Card title={"Varients"} size={"small"}>
             <div>
               <div>
                 {formData?.map((data, index) => (
@@ -246,23 +273,21 @@ function AddCategory(props) {
               </div>
             </div>
           </Card> */}
-          </div>
+                </div>
 
-          <button type="submit" className="btn btn-primary">
-            Submit
-          </button>
-        </Form>
-        <div class="row mt-3">
-          <div class="col-lg-12 grid-margin stretch-card">
-            <div class="card">
-              <div class="card-body">
-                <Table apiRequest={apiRequest} columns={columns} ref={tableRef}/>
-              </div>
+                <button type="submit" className="btn btn-primary">
+                    Submit
+                </button>
+            </Form>
+            <div class="row mt-3">
+                <div class="col-lg-12 grid-margin stretch-card">
+                    <Card title={'Category List'}>
+                        <Table apiRequest={apiRequest} columns={columns} ref={tableRef}/>
+                    </Card>
+                </div>
             </div>
-          </div>
-        </div>
-      </PageHeader>
-  );
+        </PageHeader>
+    );
 }
 
 export default Form.create()(AddCategory);
