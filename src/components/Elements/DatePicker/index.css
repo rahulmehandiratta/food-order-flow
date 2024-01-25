@@ -1,0 +1,74 @@
+.rc-calendar-range {
+    /*width: 502px !important;*/
+}
+
+.rc-calendar-picker {
+    z-index: 10000;
+}
+
+.rc-calendar {
+    width: 340px;
+}
+
+.rc-calendar-body {
+    height: 320px;
+}
+
+.rc-calendar-cell {
+    width: 24px;
+    height: 24px;
+    margin: 0 auto;
+    padding: 0;
+    color: rgba(0, 0, 0, .65);
+    line-height: 22px;
+    text-align: center;
+    background: 0 0;
+    border: 1px solid transparent;
+    border-radius: 2px;
+    -webkit-transition: background .3s ease;
+    transition: background .3s ease;
+}
+
+.rc-calendar-cell:not(.rc-calendar-selected-date):hover .rc-calendar-date {
+    background-color: #ccc;
+}
+
+.rc-calendar-body tr {
+    border: none !important;
+}
+
+.rc-calendar-body table tr td:not(:nth-child(0)), table tr th:not(:nth-child(0)) {
+    border-right: none !important;
+    border-bottom: none !important;
+    font-family: 'Poppins';
+}
+
+.rc-calendar-year-select, .rc-calendar-month-select {
+    font-size: 14px;
+    font-weight: normal;
+    font-family: 'Poppins';
+}
+
+.rc-calendar-input {
+    font-size: 14px;
+    font-family: 'Poppins';
+}
+
+.rc-calendar-footer-btn {
+    font-size: 14px;
+    font-family: 'Poppins';
+}
+
+.rc-calendar-clear-btn:after {
+    content: "x";
+    font-size: 18px;
+    color: #aaa;
+    display: inline-block;
+    line-height: 1;
+    width: 20px;
+    transition: color 0.3s ease;
+}
+
+.rc-calendar-date {
+    width: 16px !important;
+}

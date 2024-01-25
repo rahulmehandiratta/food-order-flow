@@ -1,0 +1,32 @@
+[{
+  "_id": {
+    "$oid": "65360c84e902982cec878207"
+  },
+  "name": "CASH IN HAND",
+  "__v": 0,
+  "type": "BANK"
+},
+{
+  "_id": {
+    "$oid": "65360c89e902982cec878208"
+  },
+  "name": "BANK ACCOUNT",
+  "__v": 0,
+  "type": "BANK"
+},
+{
+  "_id": {
+    "$oid": "65360c9fe902982cec878209"
+  },
+  "name": "SUNDRY DEBTORS",
+  "__v": 0,
+  "type": "CLIENT"
+},
+{
+  "_id": {
+    "$oid": "65360ca5e902982cec87820a"
+  },
+  "name": "SUNDRY CREDITORS",
+  "__v": 0,
+  "type": "CLIENT"
+}]

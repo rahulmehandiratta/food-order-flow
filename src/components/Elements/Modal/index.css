@@ -1,0 +1,96 @@
+.rc-dialog-mask {
+    /*z-index: 10001;*/
+}
+
+.rc-dialog-wrap {
+    /*z-index: 10002;*/
+}
+
+.rc-dialog-header {
+    /*padding: 16px 24px !important;*/
+    padding: 1.5rem !important;
+    /*color: rgba(0, 0, 0, .65);
+    background: #fff;*/
+    border-bottom: none;
+    /*border-radius: 4px 4px 0 0;*/
+    border-radius: 25px 25px 0 0;
+
+    /*background: #d9eafd;*/
+    color: black !important;
+
+}
+
+.rc-dialog-title {
+    margin: 0;
+    color: black !important;
+    /*font-weight: 500;*/
+    /*font-size: 16px;*/
+    line-height: 22px;
+    word-wrap: break-word;
+    font-weight: 600;
+    font-size: 1.25rem !important;
+}
+
+.rc-dialog-close {
+    opacity: 0.6 !important;
+}
+
+.rc-dialog-close-x {
+    width: 56px;
+    height: 56px;
+    font-style: normal;
+    font-weight: 500;
+
+}
+
+.rc-dialog-close-x:after {
+    content: '×';
+    color: black !important;
+    font-size: 32px;
+}
+
+.rc-dialog-content {
+    max-height: 90vh;
+    overflow: auto;
+    border-radius: 25px;
+}
+
+/*.confirmModal .rc-dialog-content {
+    height: 100%;
+}
+
+.confirmModal .rc-dialog-content .rc-dialog-close {
+    display: none;
+}
+
+.confirmModal .rc-dialog-header {
+    padding: 0 0 10px 0 !important;
+
+}
+
+.confirmModal .rc-dialog-body {
+    text-align: right;
+    padding: 10px 0 0 0 !important;
+}
+
+.confirmModal .rc-dialog-body .btn:first-child {
+    margin-right: 10px;
+}*/
+.confirm-modal .rc-dialog-body {
+    padding: 0 20px;
+}
+
+.confirm-modal .action-btn-group {
+    display: flex;
+    float: right;
+    margin-bottom: 20px;
+}
+
+.confirm-modal .action-btn-group .btn {
+    width: 20% !important;
+    margin-left: 10px;
+}
+
+.confirm-modal .rc-dialog-title {
+    font-size: 1rem !important
+}

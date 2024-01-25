@@ -1,0 +1,39 @@
+[
+    {
+      "id": "2",
+      "name": "None"
+    },
+    {
+      "id": "3",
+      "name": "Credit Card"
+    },
+    {
+      "id": "4",
+      "name": "Cheque"
+    },
+    {
+      "id": "5",
+      "name": "Bhim"
+    },
+    {
+      "id": "6",
+      "name": "Paytm"
+    },
+    {
+      "id": "7",
+      "name": "NEFT"
+    },
+    {
+      "id": "8",
+      "name": "IMPS"
+    },
+    {
+      "id": "9",
+      "name": "RTGS"
+    },
+    {
+      "id": "10",
+      "name": "Cash"
+    }
+  ]
+  

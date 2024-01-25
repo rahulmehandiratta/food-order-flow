@@ -1,0 +1,212 @@
+[
+  {
+    "id": "2",
+    "name": "Andhra Pradesh",
+    "country_id": "101",
+    "stateCode": 37
+  },
+  {
+    "id": "3",
+    "name": "Arunachal Pradesh",
+    "country_id": "101",
+    "stateCode": 12
+  },
+  {
+    "id": "4",
+    "name": "Assam",
+    "country_id": "101",
+    "stateCode": 18
+  },
+  {
+    "id": "5",
+    "name": "Bihar",
+    "country_id": "101",
+    "stateCode": 10
+  },
+  {
+    "id": "7",
+    "name": "Chhattisgarh",
+    "country_id": "101",
+    "stateCode": 22
+  },
+  {
+    "id": "6",
+    "name": "Chandigarh",
+    "country_id": "101",
+    "stateCode": 4
+  },
+  {
+    "id": "8",
+    "name": "Dadra and Nagar Haveli",
+    "country_id": "101",
+    "stateCode": 26
+  },
+  {
+    "id": "9",
+    "name": "Daman and Diu",
+    "country_id": "101",
+    "stateCode": 25
+  },
+  {
+    "id": "10",
+    "name": "Delhi",
+    "country_id": "101",
+    "stateCode": 7
+  },
+  {
+    "id": "11",
+    "name": "Goa",
+    "country_id": "101",
+    "stateCode": 30
+  },
+  {
+    "id": "12",
+    "name": "Gujarat",
+    "country_id": "101",
+    "stateCode": 24
+  },
+  {
+    "id": "13",
+    "name": "Haryana",
+    "country_id": "101",
+    "stateCode": 6
+  },
+  {
+    "id": "14",
+    "name": "Himachal Pradesh",
+    "country_id": "101",
+    "stateCode": 2
+  },
+  {
+    "id": "15",
+    "name": "Jammu and Kashmir",
+    "country_id": "101",
+    "stateCode": 1
+  },
+  {
+    "id": "16",
+    "name": "Jharkhand",
+    "country_id": "101",
+    "stateCode": 20
+  },
+  {
+    "id": "17",
+    "name": "Karnataka",
+    "country_id": "101",
+    "stateCode": 29
+  },
+  {
+    "id": "19",
+    "name": "Kerala",
+    "country_id": "101",
+    "stateCode": 32
+  },
+  {
+    "id": "20",
+    "name": "Lakshadweep",
+    "country_id": "101",
+    "stateCode": 31
+  },
+  {
+    "id": "21",
+    "name": "Madhya Pradesh",
+    "country_id": "101",
+    "stateCode": 23
+  },
+  {
+    "id": "22",
+    "name": "Maharashtra",
+    "country_id": "101",
+    "stateCode": 27
+  },
+  {
+    "id": "23",
+    "name": "Manipur",
+    "country_id": "101",
+    "stateCode": 14
+  },
+  {
+    "id": "24",
+    "name": "Meghalaya",
+    "country_id": "101",
+    "stateCode": 17
+  },
+  {
+    "id": "25",
+    "name": "Mizoram",
+    "country_id": "101",
+    "stateCode": 15
+  },
+  {
+    "id": "26",
+    "name": "Nagaland",
+    "country_id": "101",
+    "stateCode": 13
+  },
+  {
+    "id": "29",
+    "name": "Odisha",
+    "country_id": "101",
+    "stateCode": 21
+  },
+  {
+    "id": "31",
+    "name": "Pondicherry",
+    "country_id": "101",
+    "stateCode": 34
+  },
+  {
+    "id": "32",
+    "name": "Punjab",
+    "country_id": "101",
+    "stateCode": 3
+  },
+  {
+    "id": "33",
+    "name": "Rajasthan",
+    "country_id": "101",
+    "stateCode": 8
+  },
+  {
+    "id": "34",
+    "name": "Sikkim",
+    "country_id": "101",
+    "stateCode": 11
+  },
+  {
+    "id": "35",
+    "name": "Tamil Nadu",
+    "country_id": "101",
+    "stateCode": 33
+  },
+  {
+    "id": "36",
+    "name": "Telangana",
+    "country_id": "101",
+    "stateCode": 36
+  },
+  {
+    "id": "37",
+    "name": "Tripura",
+    "country_id": "101",
+    "stateCode": 16
+  },
+  {
+    "id": "38",
+    "name": "Uttar Pradesh",
+    "country_id": "101",
+    "stateCode": 9
+  },
+  {
+    "id": "39",
+    "name": "Uttarakhand",
+    "country_id": "101",
+    "stateCode": 5
+  },
+  {
+    "id": "41",
+    "name": "West Bengal",
+    "country_id": "101",
+    "stateCode": 19
+  }
+]

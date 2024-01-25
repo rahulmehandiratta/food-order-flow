@@ -1,0 +1,37 @@
+.confirmModal {
+    box-shadow: 0 2px 8px rgb(0 0 0 / 15%);
+    padding: 20px;
+    background: white;
+    position: relative;
+}
+
+.btn-box {
+    text-align: right;
+    margin-top: 10px;
+}
+
+.rc-trigger-popup {
+    /*top: 150px!important;*/
+    z-index: 10000;
+}
+
+.popover-arrow {
+    position: absolute;
+    display: block;
+    width: 8.48528137px;
+    height: 8.48528137px;
+    background: 0 0;
+    border-style: solid;
+    border-width: 4.24264069px;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    bottom: -4.8px;
+    border-top-color: transparent;
+    border-right-color: #fff;
+    border-bottom-color: #fff;
+    border-left-color: transparent;
+    -webkit-box-shadow: 3px 3px 7px rgb(0 0 0 / 7%);
+    box-shadow: 3px 3px 7px rgb(0 0 0 / 7%);
+    right: 28px;
+}
